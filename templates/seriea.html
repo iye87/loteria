@@ -1,0 +1,25 @@
+<ion-view view-title="" style="background-color: #fed931;">
+<ion-nav-bar class="bar-energized">
+    <ion-nav-buttons side="left">
+	   <!-- Toggle left side menu -->
+	   <button menu-toggle="left" class="button icon-left ion-navicon-round button-clear button-dark"></button>
+	  </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+	 <div class="item item-body" ng-repeat="prueba in data_noticias" ng-switch="prueba.par">
+	<div ng-switch-when="1">
+		<div ng-click="noticiaClic(prueba.id)"><img src="{{prueba.img}}" style=" width: 50%;float: left"></div>
+		<div ng-click="noticiaClic(prueba.id)" align="justify" ng-bind-html="prueba.titulo" style="clear: right; margin-left: 52%;"></div>
+		<div align="justify" ng-bind-html="hr" style="clear: right; margin-left: 52%;"></div>
+		<div class="ion-android-share" style="clear: right; margin-left: 52%;" ng-click="compartir()">  Compartir</div>
+	</div>
+	<div ng-switch-when="0">
+		<div ng-click="noticiaClic(prueba.id)"><img src="{{prueba.img}}" style=" width: 50%;float: right"></div>
+		<div ng-click="noticiaClic(prueba.id)" align="justify" ng-bind-html="prueba.titulo" style="clear: left; margin-right: 52%;"></div>
+		<div align="justify" ng-bind-html="hr" style="clear: left; margin-right: 52%;"></div>
+		<div class="ion-android-share" style="clear: left; margin-right: 45%;" ng-click="compartir()">  Compartir</div>
+	</div>
+
+	</div>
+  </ion-content>
+</ion-view>
